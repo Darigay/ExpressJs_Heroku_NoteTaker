@@ -51,6 +51,10 @@ adjacent to them. The items on list can be deleted and new items can be added to
 ## Screenshots
 
 The following images show the web application's appearance and functionality: 
+![NoteTaker1](https://user-images.githubusercontent.com/94805706/156958836-da653fd9-7864-4fbd-b536-484575c9b9fa.png)
+
+![NoteTaker2](https://user-images.githubusercontent.com/94805706/156958843-e7638a1b-07d8-4280-9288-c14d5c828573.png)
+
 
 
 ## Resources

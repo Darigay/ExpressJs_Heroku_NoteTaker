@@ -33,7 +33,8 @@ created.
 When the application is opened, we are presented with a landing page. On click , on the notes title and text can
 be entered and saved by clicking the save icon.
 Once the notes are saved, the note will be displayed in the left column as a list of to-do items with a delete icon 
-adjacent to them. The items on list can be deleted and new items can be added to the list by clicking and adding on right hand side.
+adjacent to them. The items on list can be deleted using the id's generated and new items can be added to the list by 
+clicking and adding on right hand side.
 
 ## Technologies
 - HTMl
@@ -56,18 +57,15 @@ The following images show the web application's appearance and functionality:
 ![NoteTaker2](https://user-images.githubusercontent.com/94805706/156958843-e7638a1b-07d8-4280-9288-c14d5c828573.png)
 
 
-
 ## Resources
 - the starter code
  (https://github.com/coding-boot-camp/miniature-eureka)
 - UofU BootCamp Express.js Modules
 
 
-
 ## Contact
 Email Address : divya.arigay@gmail.com 
 Github: Darigay@github.com
-
 
 
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.

@@ -1,10 +1,10 @@
+// Port used is 3001
 const PORT = process.env.PORT || 3001;
 
 const { randomUUID } = require('crypto');
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-
 
 const app = express();
 
@@ -20,13 +20,13 @@ app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
   });
 
-  // This Route gets notes saved and joins in db.json
+  // Get Route gets notes saved and joins in db.json
  app.get('/api/notes', (req, res) =>{
      res.sendFile( path.join(__dirname, './db/db.json'))
  });
   
 
-  // post function to add new noted to db.json
+  // Post Route to add new noted to db.json
   app.post('/api/notes', (req, res) => {
       const notes = JSON.parse(fs.readFileSync("./db/db.json"));
       const newNotes = req.body;
@@ -39,7 +39,7 @@ app.listen(PORT, () => {
     });
     
 
-  // Delete Notes
+  // Delete Notes using unique Id's
   app.delete('/api/notes/:id', (req, res) => {
       const id = req.params.id;
       const notes = JSON.parse(fs.readFileSync("./db/db.json"));

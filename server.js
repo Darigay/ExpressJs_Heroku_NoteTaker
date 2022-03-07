@@ -21,7 +21,7 @@ app.listen(PORT, () => {
   });
 
   // This Route gets notes saved and joins in db.json
- app.get('/api/notes',(res,req) =>{
+ app.get('/api/notes', (req, res) =>{
      res.sendFile( path.join(__dirname, './db/db.json'))
  });
   
@@ -29,7 +29,8 @@ app.listen(PORT, () => {
   // post function to add new noted to db.json
   app.post('/api/notes', (req, res) => {
       const notes = JSON.parse(fs.readFileSync("./db/db.json"));
-      const newNotes = req.boby;
+      const newNotes = req.body;
+      newNotes.id = randomUUID();
       notes.push(newNotes);
     fs.writeFileSync(
         path.join(__dirname, './db/db.json'),
@@ -39,6 +40,17 @@ app.listen(PORT, () => {
     
 
   // Delete Notes
+  app.delete('/api/notes/:id', (req, res) => {
+      const id = req.params.id;
+      const notes = JSON.parse(fs.readFileSync("./db/db.json"));
+      const filterNotes = notes.filter(note => {
+          return note.id != id ;
+      })
+      fs.writeFileSync(
+        path.join(__dirname, './db/db.json'),
+        JSON.stringify(filterNotes))
+        res.json(filterNotes);
+  })
 
 
   // HTML calls
